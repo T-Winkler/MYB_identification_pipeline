@@ -1,0 +1,5 @@
+Output/MYB_table
+
+Table of identified MYB genes is saved here.
+default: empty
+The table is saved here in the comma separated format (.csv)

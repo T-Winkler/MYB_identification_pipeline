@@ -1,0 +1,9 @@
+Plots
+
+All created plots are saved in this directory. 
+default: empty
+
+Three files should appear here:
+species_barplot.pdf
+species_myb_ideogram.png
+species_phylogeny.pdf

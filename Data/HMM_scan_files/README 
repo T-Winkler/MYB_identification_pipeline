@@ -1,0 +1,4 @@
+Data/HMM_scan_files
+
+All files needed to perform HMM_scans for the MYB DBD. 
+For the HMMscan, the Myb_DNA-binding.hmm.txt file has to be provided with the other files (... .h3f, ... .h3j) present in the same folder.

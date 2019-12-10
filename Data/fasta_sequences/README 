@@ -1,0 +1,7 @@
+Data/fasta_senquences
+
+Fasta files are saved here:
+default: AT_myb.fa, BV_myb.fa
+
+Additionally the "combined.fa" fasta file is saved in the directory. The file contains A. thaliana and B. vulgaris MYB proteins in addition to the unfiltered provided outer_join fasta file (parameter 4). 
+The "combined_filtered.fa" fasta file contains the A. thaliana, B. vulgaris MYB proteins and all filtered MYB proteins of the species. The file is used as input for the multiple sequence alignment the phylogenetic tree is based on.

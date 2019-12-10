@@ -1,0 +1,27 @@
+MYB identification pipeline
+
+default:
+Data/
+Output/
+Plots/
+Identification_pipeline.Rmd
+
+All code needed to run the MYB identification pipeline can be found in the Identification_pipeline markdown file. 
+
+Required Software:
+- R with Rmarkdown
+- HMMER command line application
+- CLUSTALW command line application
+(see markdown file)
+
+Required files:
+- HMM scan input file (fasta), generated from the full outer join of putative MYB proteins of a species detected by HMM scan or BLAST
+- Gff3 file of the used genome annotation
+- Fasta file of the used genome assembly
+
+All required files can be stored at Data/parameter_files. The path to the files in addition to the name of the species has to be set in the markdown document as parameters (see markdown file for more information).
+
+The only folders in which input files are saved in the Data/ directory. 
+In the Output/ folders different output files are saved. See the markdown document or the README files in the folders for more information.
+Under Plots/ different generated plots are saved. See the markdown document or the README files in the folders for more information.
+

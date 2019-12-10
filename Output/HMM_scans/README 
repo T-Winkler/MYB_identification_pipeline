@@ -1,0 +1,6 @@
+Output/HMM_scans
+
+All files generated from HMMER application are saved here (--domtblout parameter).
+default: AT_myb and BV_myb folders
+
+The folders contain HMM scans of the MYB proteins of A. thaliana and B. vulgaris. This way the HMM scans for both species do not have to be repeated. 

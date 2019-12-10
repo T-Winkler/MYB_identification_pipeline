@@ -1,0 +1,5 @@
+Output/myb_fasta
+
+Fasta files of the filtered MYB proteins are saved here
+default: empty
+

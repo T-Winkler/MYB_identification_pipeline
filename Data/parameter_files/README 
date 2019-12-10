@@ -1,0 +1,6 @@
+Data/parameter_files
+
+All three parameter files can be stored here:
+- genome_assembly_file.fa (fasta)
+- genome_annotation.gene.gff3 (gff3)
+- putative_MYB_outer_join.fa (fasta) 

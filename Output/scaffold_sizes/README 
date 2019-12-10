@@ -1,0 +1,4 @@
+Output/scaffold_sizes
+
+Text file, generated to correctly set the chromosome sizes to create the ideogram.
+default: empty
