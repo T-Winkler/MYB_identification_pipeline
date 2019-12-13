@@ -626,14 +626,15 @@ chromosomes <- chromosomes %>%
 chr_subset <- subset(chromosomes, scaffold %in% myb_gff$seqid)
 chr_subset <- chr_subset %>% 
   mutate(scaffold = substr(chr_subset$scaffold, 10, 11)) 
-
+### Remove rows with 'NA', sort by chromosome
 chr_subset$scaffold <- as.numeric(chr_subset$scaffold)
 chr_subset <- na.omit(chr_subset)
 chr_subset <- arrange(chr_subset, scaffold)
-rows <- nrow(chr_subset)
-
+### Rename columns to seqnames and end
 chromosome_ranges <- chr_subset %>%
-  dplyr::rename(seqnames = scaffold, end = V3) 
+  dplyr::rename(seqnames = scaffold, 
+                end = V3) 
+### Create columns start and strand
 chromosome_ranges <- chromosome_ranges %>%
   mutate(start = 1) %>%
   mutate(strand = '*')
@@ -725,7 +726,7 @@ library(poppr)
 library(ggtree)
 ```
 
-For coloring of the tree, a column indicating the species is added to the dataframe defining the subgroups of all identified MYB proteins. The color palette used for coloring of the tree is defined. The .phb file is imported into R to create the ggtree object. The edited dataframe of all MYB proteins is added to the ggtree object to enable coloring. The tip labels are colored based on species, tippoints are added and colored based on subfamily classification. Bootstrap values in percentage are shown as nodelabels. Bootstrap values of 0% are excluded from the tree. The phylogenetic tree is saved as pdf file
+For coloring of the tree, a column indicating the species is added to the dataframe defining the subgroups of all identified MYB proteins. The color palette used for coloring of the tree is defined. The .phb file is imported into R to create the ggtree object. The edited dataframe of all MYB proteins is added to the ggtree object to enable coloring. The tip labels are colored based on species, tippoints are added and colored based on subfamily classification. Bootstrap values in percentage are shown as nodelabels. Bootstrap values of 0% are excluded from the tree. The phylogenetic tree is saved as pdf file.
 
 \
 ```{r, eval=FALSE}
@@ -789,12 +790,22 @@ Subgroups were annotated on the phylogenetic tree. Each subfamily had to be manu
 \
 ```{r, eval=FALSE}
 t_species + 
-  geom_strip(nodeid(tree,'AUR62027278-RA'),nodeid(tree,'AT5G14340.1'), barsize=0.3,
-             offset = 5, fontsize=1.5, extend=0.2, label ='SX') +
+  geom_strip(nodeid(tree,'AUR62027278-RA'),
+             nodeid(tree,'AT5G14340.1'), 
+             barsize=0.3,
+             offset = 5, 
+             fontsize=1.5, 
+             extend=0.2, 
+             label ='SX') +
   ## Incase only a single protein forms a subgroup:
   ## To annotate a clade for a hypotetical protein X, located between AT1G06180.1 and Bv5ug126530_qcwx
-  geom_strip(nodeid(tree,'AT1G06180.1'),nodeid(tree,'Bv5ug126530_qcwx'), barsize=0.3, 
-             offset = 5, fontsize=1.5, extend = -0.5, label ='SX') 
+  geom_strip(nodeid(tree,'AT1G06180.1'),
+             nodeid(tree,'Bv5ug126530_qcwx'), 
+             barsize=0.3, 
+             offset = 5, 
+             fontsize=1.5, 
+             extend = -0.5, 
+             label ='SX') 
 ```
 
 
